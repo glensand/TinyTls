@@ -71,9 +71,9 @@ public:
 	 * @brief Template versions of send/receive operations, intended to be used with primitive types only
 	 */
 	template<typename T>
-	void Send(const T& Value)
+	bool Send(const T& Value)
 	{
-		Send(&Value, sizeof(T));
+		return Send(&Value, sizeof(T));
 	}
 
 	template<typename T>
