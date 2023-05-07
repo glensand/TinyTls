@@ -50,8 +50,9 @@ public:
 
     virtual bool SetReceiveTimeout(int32 TimeOut) override
     {
+        const auto Time = ConvertTime(TimeOut);
         const auto Error = setsockopt(Socket,
-            SOL_SOCKET, SO_RCVTIMEO, (char*)&TimeOut, sizeof(struct timeval));
+            SOL_SOCKET, SO_RCVTIMEO, (char*)&Time, sizeof(struct timeval));
 
         UE_CLOG(Error != 0, LogTinyTls, Error, TEXT("TCP error: could not set receive timeout"));
         return Error == 0;
@@ -59,8 +60,9 @@ public:
 
     virtual bool SetSendTimeout(int32 TimeOut) override
     {
+        const auto Time = ConvertTime(TimeOut);
         const auto Error = setsockopt(Socket,
-            SOL_SOCKET, SO_SNDTIMEO, (char*)&TimeOut, sizeof(struct timeval));
+            SOL_SOCKET, SO_SNDTIMEO, (char*)&Time, sizeof(struct timeval));
 
         UE_CLOG(Error != 0, LogTinyTls, Error, TEXT("TCP error: could not set send timeout"));
         return Error == 0;
@@ -200,6 +202,14 @@ private:
             closesocket(Socket);
             Socket = INVALID_SOCKET;
         }
+    }
+
+    static timeval ConvertTime(int32 Time)
+    {
+        timeval Converted;      
+        Converted.tv_sec = 0;
+        Converted.tv_usec = Time * 1000;
+        return Converted;
     }
     
     SOCKET Socket{ INVALID_SOCKET };
