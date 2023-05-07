@@ -1,0 +1,25 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Tiny Tls Stream",
+	"Description": "Simple implementation of the tls stream (based on WinSock and OpenSSL)",
+	"Category": "Network",
+	"CreatedBy": "Gleb Bezborodov",
+	"CreatedByURL": "https://github.com/glensand",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": false,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "TinyTls",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault"
+		}
+	],
+	"IsExperimentalVersion": false
+}
