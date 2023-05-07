@@ -24,7 +24,7 @@ void Example1()
 	const FString Message = "Disaster is Here";
 	
 	Stream->Send( Message.Len()); // chars count first
-	Stream->Send(GetData(Message), Message.Len()); // And the data
+	Stream->Send(GetData(Message), Message.GetCharArray().Num()); // And the data
 	
 	TCHAR Buffer[1024];
 	const auto Length = Stream->Receive<int32_t>();
