@@ -8,7 +8,7 @@ void FTinyTlsModule::StartupModule()
 {
 	FDefaultModuleImpl::StartupModule();
 
-	static WSADATA WsaData;
+	WSADATA WsaData;
 	(void)WSAStartup(MAKEWORD(2, 2), &WsaData);
 
 	SSL_library_init();

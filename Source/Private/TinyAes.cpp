@@ -1,12 +1,6 @@
 #include "TinyAes.h"
-
+#include "Foundation.h"
 #include <cstring>
-#define UI UI_ST
-//THIRD_PARTY_INCLUDES_START
-#include <openssl/evp.h>
-#include <openssl/aes.h>
-//THIRD_PARTY_INCLUDES_END
-#undef UI
 
 namespace TinyTls
 {

@@ -8,13 +8,17 @@
 
 #pragma once
 
+THIRD_PARTY_INCLUDES_START
 #include <winsock2.h>
 #include <ws2tcpip.h>
+THIRD_PARTY_INCLUDES_END
 
 #define UI UI_ST
 THIRD_PARTY_INCLUDES_START
 #include <openssl/bio.h>
 #include <openssl/ssl.h>
 #include <openssl/err.h>
+#include <openssl/evp.h>
+#include <openssl/aes.h>
 THIRD_PARTY_INCLUDES_END
 #undef UI
