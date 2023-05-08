@@ -20,8 +20,8 @@ public:
 
     unsigned char* Encrypt(const void* Data, int32& Size) const;
     unsigned char* Decrypt(const void* Data, int32& Size) const;
+	
 private:
-
     evp_cipher_ctx_st* DecoderContext{ nullptr };
     evp_cipher_ctx_st* EncoderContext{ nullptr };
 };
