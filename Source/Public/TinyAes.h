@@ -17,9 +17,9 @@ class FAes final
 public:
 	/**
      * @brief Initialize internal structures
-     * @param Key Just an any sequence you want, by this sequence cipher will create a 32byte sequence
+     * @param KeyData Just an any sequence you want, by this sequence cipher will create a 32byte sequence
      */
-    explicit FAes(const char* Key);
+    explicit FAes(const char* KeyData);
     ~FAes();
 
 	/**
