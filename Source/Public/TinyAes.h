@@ -19,8 +19,8 @@ public:
      * @brief Initialize internal structures
      * @param KeyData Just an any sequence you want, by this sequence cipher will create a 32byte sequence
      */
-    explicit FAes(const char* KeyData);
-    ~FAes();
+    TINYTLS_API explicit FAes(const char* KeyData);
+    TINYTLS_API ~FAes();
 
 	/**
      * @brief Encrypt the given sequence of data using recently generated key
@@ -29,7 +29,7 @@ public:
      * @return Pointer to the encrypted sequence, and the Size contains length of the sequence (in bytes)
      * NOTE! After the work done, you must delete encrypted sequence manually (delete[] seq)
      */
-    unsigned char* Encrypt(const void* Data, int32& Size) const;
+    TINYTLS_API unsigned char* Encrypt(const void* Data, int32& Size) const;
 
 	/**
 	* @brief Decrypt the given sequence of data using recently generated key
@@ -38,7 +38,7 @@ public:
 	* @return Pointer to the encrypted sequence, and the Size contains length of the sequence (in bytes)
 	* NOTE! After the work done, you must delete decrypted sequence manually (delete[] seq)
 	*/
-    unsigned char* Decrypt(const void* Data, int32& Size) const;
+    TINYTLS_API unsigned char* Decrypt(const void* Data, int32& Size) const;
 	
 private:
     evp_cipher_ctx_st* DecoderContext{ nullptr };
